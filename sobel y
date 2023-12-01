@@ -1,0 +1,9 @@
+import cv2
+img=cv2.imread("C:/Users/sahithi/Music/anil.jpg")
+cv2.imshow('original',img)
+cv2.waitKey(0)
+img_Gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+img_Blur=cv2.GaussianBlur(img_Gray,(7,7),0)
+sobely = cv2.Sobel(src=img_Blur, ddepth=cv2.CV_64F, dx=0, dy=1, ksize=5)
+cv2.imshow('sobel Y',sobely)
+cv2.waitKey(0)
